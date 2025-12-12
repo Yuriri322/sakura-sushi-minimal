@@ -1,0 +1,15 @@
+{
+  "buildCommand": "yarn build",
+  "devCommand": "yarn dev",
+  "installCommand": "yarn install",
+  "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "prod": true,
+      "dev": true
+    }
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
