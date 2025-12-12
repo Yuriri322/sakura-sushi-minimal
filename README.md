@@ -1,11 +1,15 @@
 # Sakura Sushi 🌸
 
-A modern, performant restaurant website built with Next.js 15, featuring a beautiful bilingual menu showcase with advanced filtering and search capabilities.
+A modern, performant restaurant website built with Next.js 16, featuring a beautiful bilingual menu showcase with advanced filtering and search capabilities.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![React](https://img.shields.io/badge/React-19-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**🔗 Live Demo:** [Coming Soon - Deploy to Vercel]
+
+**📦 Repository:** [github.com/Yuriri322/sakura-sushi-minimal](https://github.com/Yuriri322/sakura-sushi-minimal)
 
 ## ✨ Features
 
@@ -125,19 +129,48 @@ Update phone/email:
 
 ### Vercel (Recommended)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Yuriri322/sakura-sushi-minimal)
+
+**Quick Deploy:**
+
+1. Click the "Deploy with Vercel" button above
+2. Connect your GitHub account
+3. Add environment variables (see below)
+4. Deploy!
+
+**Manual Deploy:**
+
 1. Push to GitHub
-2. Import in Vercel
-3. Add environment variables
-4. Deploy
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import your repository
+4. Configure environment variables
+5. Deploy
+
+📖 **Detailed deployment guide:** See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)
 
 ### Required Environment Variables
 
 ```env
-DATABASE_URL
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY
-SUPABASE_SERVICE_ROLE_KEY
-NEXT_PUBLIC_BASE_URL
+# Database (Required)
+DATABASE_URL=postgresql://user:password@host:port/database
+
+# Supabase (Required for image storage)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+# Application (Optional)
+NEXT_PUBLIC_BASE_URL=https://your-domain.com
+```
+
+💡 **Tip:** Use the `.env.vercel.template` file as a reference for setting up environment variables in Vercel.
+
+### Post-Deployment
+
+After deploying, seed your database:
+
+```bash
+# Set environment to production
+ENV=prod npm run db:seed
 ```
 
 ## 📝 Database Schema Changes

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Development files
+.env.dev
+.env.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts (only seed script needed)
+scripts/reset-db.ts
+
+# Documentation (not needed in deployment)
+CLAUDE.md
+OPTIMIZATION.md
+DEPLOYMENT.md
+PRODUCTION-READY.md
+VERCEL_DEPLOYMENT.md
+
+# Database tools
+drizzle/
+
+# Build cache (Vercel handles this)
+.next/cache/

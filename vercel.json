@@ -6,10 +6,32 @@
   "git": {
     "deploymentEnabled": {
       "prod": true,
-      "dev": true
+      "preview": true
     }
   },
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "regions": ["iad1"],
+  "functions": {
+    "src/app/**/route.ts": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
 }
