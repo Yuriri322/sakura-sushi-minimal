@@ -264,7 +264,31 @@ async function seed() {
         nameBg: "Лютиво",
         nameEn: "Spicy",
       },
-      // Allergens
+      // Allergens (EU Standard - 14 types)
+      {
+        slug: "gluten",
+        icon: "🌾",
+        color: "#d97706",
+        category: "allergen" as const,
+        nameBg: "Глутен",
+        nameEn: "Gluten",
+      },
+      {
+        slug: "crustaceans",
+        icon: "🦐",
+        color: "#ec4899",
+        category: "allergen" as const,
+        nameBg: "Ракообразни",
+        nameEn: "Crustaceans",
+      },
+      {
+        slug: "eggs",
+        icon: "🥚",
+        color: "#eab308",
+        category: "allergen" as const,
+        nameBg: "Яйца",
+        nameEn: "Eggs",
+      },
       {
         slug: "fish",
         icon: "🐟",
@@ -274,20 +298,12 @@ async function seed() {
         nameEn: "Fish",
       },
       {
-        slug: "shellfish",
-        icon: "🦐",
-        color: "#ec4899",
+        slug: "peanuts",
+        icon: "�",
+        color: "#92400e",
         category: "allergen" as const,
-        nameBg: "Морски дарове",
-        nameEn: "Shellfish",
-      },
-      {
-        slug: "dairy",
-        icon: "🥛",
-        color: "#a855f7",
-        category: "allergen" as const,
-        nameBg: "Млечни продукти",
-        nameEn: "Dairy",
+        nameBg: "Арахис",
+        nameEn: "Peanuts",
       },
       {
         slug: "soy",
@@ -298,12 +314,36 @@ async function seed() {
         nameEn: "Soy",
       },
       {
-        slug: "gluten",
-        icon: "🌾",
-        color: "#d97706",
+        slug: "dairy",
+        icon: "🥛",
+        color: "#a855f7",
         category: "allergen" as const,
-        nameBg: "Глутен",
-        nameEn: "Gluten",
+        nameBg: "Млечни продукти и лактоза",
+        nameEn: "Dairy and Lactose",
+      },
+      {
+        slug: "nuts",
+        icon: "🌰",
+        color: "#854d0e",
+        category: "allergen" as const,
+        nameBg: "Ядки",
+        nameEn: "Nuts",
+      },
+      {
+        slug: "celery",
+        icon: "🥬",
+        color: "#16a34a",
+        category: "allergen" as const,
+        nameBg: "Целина",
+        nameEn: "Celery",
+      },
+      {
+        slug: "mustard",
+        icon: "🟡",
+        color: "#ca8a04",
+        category: "allergen" as const,
+        nameBg: "Горчица",
+        nameEn: "Mustard",
       },
       {
         slug: "sesame",
@@ -314,12 +354,28 @@ async function seed() {
         nameEn: "Sesame",
       },
       {
-        slug: "eggs",
-        icon: "🥚",
-        color: "#eab308",
+        slug: "sulfites",
+        icon: "⚗️",
+        color: "#7c3aed",
         category: "allergen" as const,
-        nameBg: "Яйца",
-        nameEn: "Eggs",
+        nameBg: "Сулфити",
+        nameEn: "Sulfites",
+      },
+      {
+        slug: "lupin",
+        icon: "�",
+        color: "#6366f1",
+        category: "allergen" as const,
+        nameBg: "Лупин",
+        nameEn: "Lupin",
+      },
+      {
+        slug: "molluscs",
+        icon: "🦑",
+        color: "#db2777",
+        category: "allergen" as const,
+        nameBg: "Мекотели",
+        nameEn: "Molluscs",
       },
     ];
 
@@ -366,7 +422,7 @@ async function seed() {
         price: "14.70",
         descBg: "Класически урамаки със сьомга, филаделфия сирене и краставица",
         descEn: "Classic uramaki with salmon, Philadelphia cheese and cucumber",
-        tags: [t.popular, t.fish, t.dairy, t.soy, t.gluten],
+        tags: [t.popular, t.fish, t.dairy], // PDF: 4, 7
       },
       {
         slug: "kaliforniy",
@@ -375,7 +431,7 @@ async function seed() {
         price: "14.70",
         descBg: "Урамаки със сурими, авокадо, краставица и летящи хайверчета",
         descEn: "Uramaki with surimi, avocado, cucumber and flying fish roe",
-        tags: [t.popular, t.shellfish, t.fish, t.soy, t.gluten],
+        tags: [t.popular, t.fish, t.soy, t.dairy, t.sesame], // PDF: 4, 6, 7, 11
       },
       {
         slug: "syomga_bu",
@@ -386,7 +442,7 @@ async function seed() {
           "Урамаки със сьомга, филаделфия сирене, авокадо и летящи хайверчета",
         descEn:
           "Uramaki with salmon, Philadelphia cheese, avocado and flying fish roe",
-        tags: [t.popular, t.fish, t.dairy, t.soy, t.gluten],
+        tags: [t.popular, t.fish, t.soy, t.dairy, t.sesame], // PDF: 4, 6, 7, 11
       },
       {
         slug: "banketyt_na_poseydo",
@@ -397,7 +453,7 @@ async function seed() {
           "Урамаки с кралски скариди, авокадо, краставица и крем сирене, поръсен със сусам",
         descEn:
           "Uramaki with king prawns, avocado, cucumber and cream cheese, sprinkled with sesame",
-        tags: [t.popular, t.shellfish, t.dairy, t.soy, t.gluten, t.sesame],
+        tags: [t.popular, t.fish, t.soy, t.dairy, t.sesame], // PDF: 4, 6, 7, 11
       },
       {
         slug: "izgryavashto_slync",
@@ -406,7 +462,7 @@ async function seed() {
         price: "11.70",
         descBg: "Урамаки с пушена сьомга, крем сирене и сусам",
         descEn: "Uramaki with smoked salmon, cream cheese and sesame",
-        tags: [t.popular, t.fish, t.dairy, t.soy, t.gluten, t.sesame],
+        tags: [t.popular, t.dairy], // PDF: Рол Ра - 7 (assuming this is the same)
       },
       // Rest of items
       {
@@ -416,7 +472,7 @@ async function seed() {
         price: "13.70",
         descBg: "Урамаки със скариди, краставица и спайси майонеза",
         descEn: "Uramaki with shrimp, cucumber and spicy mayo",
-        tags: [t.shellfish, t.soy, t.gluten, t.eggs],
+        tags: [t.fish, t.dairy, t.sesame], // PDF: 4, 7, 11
       },
       {
         slug: "zlatan_zmio",
@@ -426,7 +482,7 @@ async function seed() {
         descBg:
           "Пушена змиорка, краставица, манго, кафяв захар, суши ориз, нори",
         descEn: "Smoked eel, cucumber, mango, brown sugar, sushi rice, nori",
-        tags: [t.fish, t.soy, t.gluten, t.sesame],
+        tags: [t.fish, t.soy], // PDF: 4, 6
       },
       {
         slug: "izumrudna_skarid",
@@ -435,7 +491,7 @@ async function seed() {
         price: "13.70",
         descBg: "Урамаки със скариди, авокадо, краставица и крем сирене",
         descEn: "Uramaki with shrimp, avocado, cucumber and cream cheese",
-        tags: [t.shellfish, t.dairy, t.soy, t.gluten],
+        tags: [t.crustaceans, t.soy, t.dairy], // PDF: 2, 6, 7
       },
       {
         slug: "miyadzak",
@@ -444,7 +500,7 @@ async function seed() {
         price: "13.70",
         descBg: "Урамаки със змиор, краставица, авокадо и унаги сос",
         descEn: "Uramaki with eel, cucumber, avocado and unagi sauce",
-        tags: [t.fish, t.soy, t.gluten, t.sesame],
+        tags: [t.gluten, t.crustaceans, t.eggs, t.fish, t.soy, t.dairy, t.sesame], // PDF: 1, 2, 3, 4, 6, 7, 11
       },
       {
         slug: "nefritov_drako",
@@ -454,7 +510,7 @@ async function seed() {
         descBg:
           "Урамаки с темпура скариди, авокадо, краставица и спайси майонеза",
         descEn: "Uramaki with tempura shrimp, avocado, cucumber and spicy mayo",
-        tags: [t.shellfish, t.soy, t.gluten, t.eggs],
+        tags: [t.gluten, t.crustaceans, t.eggs, t.soy, t.dairy], // PDF: 1, 2, 3, 6, 7
       },
       {
         slug: "neshtastniyat_riba",
@@ -463,7 +519,7 @@ async function seed() {
         price: "13.70",
         descBg: "Урамаки със сьомга, авокадо и унаги сос",
         descEn: "Uramaki with salmon, avocado and unagi sauce",
-        tags: [t.fish, t.soy, t.gluten, t.sesame],
+        tags: [t.gluten, t.crustaceans, t.eggs, t.dairy], // PDF: 1, 2, 3, 7
       },
       {
         slug: "tantsuvasha_ryba_to",
@@ -472,7 +528,7 @@ async function seed() {
         price: "13.70",
         descBg: "Урамаки с риба тон, авокадо, спайси майонеза и чесън",
         descEn: "Uramaki with tuna, avocado, spicy mayo and garlic",
-        tags: [t.spicy, t.fish, t.soy, t.gluten, t.eggs],
+        tags: [t.spicy, t.fish, t.dairy, t.sesame], // PDF: 4, 7, 11
       },
       {
         slug: "fudziyam",
@@ -481,7 +537,7 @@ async function seed() {
         price: "11.70",
         descBg: "Урамаки с печени зеленчуци, крем сирене и сусам",
         descEn: "Uramaki with grilled vegetables, cream cheese and sesame",
-        tags: [t.vegetarian, t.dairy, t.soy, t.gluten, t.sesame],
+        tags: [t.vegetarian, t.fish, t.dairy], // PDF: 4, 7
       },
       {
         slug: "vegan_ro",
@@ -490,7 +546,7 @@ async function seed() {
         price: "11.70",
         descBg: "Урамаки с авокадо, краставица, моркови и сусам",
         descEn: "Uramaki with avocado, cucumber, carrots and sesame",
-        tags: [t.vegetarian, t.vegan, t.soy, t.gluten, t.sesame],
+        tags: [t.vegetarian, t.vegan, t.sesame], // PDF: 11
       },
     ];
     allCreatedItems.push(
@@ -506,7 +562,7 @@ async function seed() {
         price: "3.30",
         descBg: "Гункан със сьомга и майонеза (1 бр)",
         descEn: "Gunkan with salmon and mayo (1 pc)",
-        tags: [t.fish, t.soy, t.gluten, t.eggs],
+        tags: [t.fish, t.soy, t.sesame], // PDF: 4,6,11
       },
       {
         slug: "cipura_gunka",
@@ -515,7 +571,7 @@ async function seed() {
         price: "3.30",
         descBg: "Гункан с ципура и майонеза (1 бр)",
         descEn: "Gunkan with sea bream and mayo (1 pc)",
-        tags: [t.fish, t.soy, t.gluten, t.eggs],
+        tags: [t.fish, t.soy, t.sesame], // PDF: 4,6,11
       },
       {
         slug: "ryba_ton_gunka",
@@ -524,7 +580,7 @@ async function seed() {
         price: "3.30",
         descBg: "Гункан с риба тон и майонеза (1 бр)",
         descEn: "Gunkan with tuna and mayo (1 pc)",
-        tags: [t.fish, t.soy, t.gluten, t.eggs],
+        tags: [t.fish, t.soy, t.sesame], // PDF: 4,6,11
       },
     ];
     allCreatedItems.push(
@@ -540,7 +596,7 @@ async function seed() {
         price: "5.70",
         descBg: "Тънки ролки с авокадо и сусам (6 броя)",
         descEn: "Thin rolls with avocado and sesame (6 pcs)",
-        tags: [t.vegetarian, t.vegan, t.soy, t.gluten, t.sesame],
+        tags: [t.vegetarian, t.vegan], // PDF: — (no allergens)
       },
       {
         slug: "sis_syomga_hosomak", // truncated filename in storage
@@ -549,7 +605,7 @@ async function seed() {
         price: "7.70",
         descBg: "Тънки ролки със сьомга (6 броя)",
         descEn: "Thin rolls with salmon (6 pcs)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
       },
       {
         slug: "sis_krastavitsa",
@@ -558,7 +614,7 @@ async function seed() {
         price: "6.70",
         descBg: "Краставица, суши ориз, нори (8 броя)",
         descEn: "Cucumber, sushi rice, nori (8 pcs)",
-        tags: [t.vegetarian, t.vegan, t.soy, t.gluten],
+        tags: [t.vegetarian, t.vegan], // PDF: — (no allergens)
         imageExt: "png",
       },
       {
@@ -568,7 +624,7 @@ async function seed() {
         price: "8.70",
         descBg: "Риба тон, суши ориз, нори (8 броя)",
         descEn: "Tuna, sushi rice, nori (8 pcs)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
         imageExt: "png",
       },
     ];
@@ -585,7 +641,7 @@ async function seed() {
         price: "14.70",
         descBg: "Топъл рол със сьомга, крем сирене и унаги сос",
         descEn: "Hot roll with salmon, cream cheese and unagi sauce",
-        tags: [t.popular, t.fish, t.dairy, t.soy, t.gluten],
+        tags: [t.popular, t.gluten, t.eggs, t.fish, t.soy, t.dairy], // PDF: 1,3,4,6,7
       },
       {
         slug: "skaridiniyat_kra",
@@ -595,7 +651,7 @@ async function seed() {
         descBg: "Тартар скарида, жълтък, унаги сос, темпура, суши ориз, нори",
         descEn:
           "Shrimp tartare, egg yolk, unagi sauce, tempura, sushi rice, nori",
-        tags: [t.shellfish, t.eggs, t.soy, t.gluten],
+        tags: [t.gluten, t.crustaceans, t.eggs, t.soy, t.dairy], // PDF: 1,2,3,6,7
       },
       {
         slug: "sator",
@@ -604,7 +660,7 @@ async function seed() {
         price: "14.70",
         descBg: "Топъл рол с риба тон, авокадо и спайси майонеза",
         descEn: "Hot roll with tuna, avocado and spicy mayo",
-        tags: [t.spicy, t.fish, t.soy, t.gluten, t.eggs],
+        tags: [t.spicy, t.gluten, t.crustaceans, t.eggs, t.fish, t.soy, t.dairy], // PDF: 1,2,3,4,6,7
       },
       {
         slug: "chetyre_siren",
@@ -613,7 +669,7 @@ async function seed() {
         price: "13.70",
         descBg: "Топъл рол с крем сирене, моцарела и пармезан",
         descEn: "Hot roll with cream cheese, mozzarella and parmesan",
-        tags: [t.vegetarian, t.dairy, t.soy, t.gluten],
+        tags: [t.vegetarian, t.gluten, t.eggs, t.dairy], // PDF: 1,3,7
       },
     ];
     allCreatedItems.push(
@@ -629,7 +685,7 @@ async function seed() {
         price: "2.30",
         descBg: "Нигири с пресна сьомга (1 бр)",
         descEn: "Nigiri with fresh salmon (1 pc)",
-        tags: [t.popular, t.fish, t.soy, t.gluten],
+        tags: [t.popular, t.fish], // PDF: 4
       },
       {
         slug: "niigiri_zmio",
@@ -638,7 +694,7 @@ async function seed() {
         price: "4.30",
         descBg: "Пушена змиорка, суши ориз, уасаби, нори (1 бр)",
         descEn: "Smoked eel, sushi rice, wasabi, nori (1 pc)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish, t.soy], // PDF: 4,6
       },
       {
         slug: "zapechena_syomg",
@@ -647,7 +703,7 @@ async function seed() {
         price: "2.30",
         descBg: "Нигири със запечена сьомга (1 бр)",
         descEn: "Nigiri with baked salmon (1 pc)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
       },
       {
         slug: "skarida_nigir",
@@ -656,7 +712,7 @@ async function seed() {
         price: "2.30",
         descBg: "Нигири със скариди (1 бр)",
         descEn: "Nigiri with shrimp (1 pc)",
-        tags: [t.shellfish, t.soy, t.gluten],
+        tags: [t.crustaceans], // PDF: 2
       },
       {
         slug: "cipura_nigir",
@@ -665,7 +721,7 @@ async function seed() {
         price: "3.70",
         descBg: "Нигири с ципура (1 бр)",
         descEn: "Nigiri with sea bream (1 pc)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
       },
       {
         slug: "niigiri_omle",
@@ -674,7 +730,7 @@ async function seed() {
         price: "2.30",
         descBg: 'Суши ориз, нори, бульон "даши", яйца (1 бр)',
         descEn: "Sushi rice, nori, dashi broth, eggs (1 pc)",
-        tags: [t.vegetarian, t.eggs, t.soy, t.gluten],
+        tags: [t.vegetarian, t.eggs, t.fish, t.soy], // PDF: 3,4,6
       },
       {
         slug: "niigiri_syomg",
@@ -683,7 +739,7 @@ async function seed() {
         price: "3.70",
         descBg: "Сурова сьомга, суши ориз, уасаби (1 бр)",
         descEn: "Raw salmon, sushi rice, wasabi (1 pc)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
       },
       {
         slug: "kralski_omlet_nigir",
@@ -692,7 +748,7 @@ async function seed() {
         price: "1.70",
         descBg: "Нигири с обогатен японски омлет (1 бр)",
         descEn: "Nigiri with enriched Japanese omelette (1 pc)",
-        tags: [t.vegetarian, t.eggs, t.soy, t.gluten],
+        tags: [t.vegetarian, t.eggs, t.fish, t.soy, t.dairy], // PDF: 3,4,6,7
       },
       {
         slug: "ryba_ton_nigir",
@@ -701,7 +757,7 @@ async function seed() {
         price: "2.30",
         descBg: "Нигири с риба тон (1 бр)",
         descEn: "Nigiri with tuna (1 pc)",
-        tags: [t.fish, t.soy, t.gluten],
+        tags: [t.fish], // PDF: 4
       },
     ];
     allCreatedItems.push(
@@ -717,7 +773,7 @@ async function seed() {
         price: "10.70",
         descBg: "Уок нудли със свинско месо и зеленчуци",
         descEn: "Wok noodles with pork and vegetables",
-        tags: [t.soy, t.gluten, t.sesame],
+        tags: [t.gluten, t.eggs, t.soy, t.sesame], // PDF: 1,3,6,11
       },
       {
         slug: "pilehski_wo",
@@ -728,7 +784,7 @@ async function seed() {
           "Пилешко месо, нудли удон, морков, лук, зелен лук, якинику сос, сусам, корейски пипер",
         descEn:
           "Chicken, udon noodles, carrot, onion, green onion, yakiniku sauce, sesame, Korean pepper",
-        tags: [t.soy, t.gluten, t.sesame],
+        tags: [t.gluten, t.eggs, t.soy, t.sesame], // PDF: 1,3,6,11
       },
       {
         slug: "morski_darove_wo",
@@ -737,7 +793,7 @@ async function seed() {
         price: "13.70",
         descBg: "Уок нудли с микс морски дарове и зеленчуци",
         descEn: "Wok noodles with mixed seafood and vegetables",
-        tags: [t.shellfish, t.fish, t.soy, t.gluten, t.sesame],
+        tags: [t.crustaceans, t.soy, t.sesame, t.molluscs], // PDF: 2,6,11,14
       },
     ];
     allCreatedItems.push(
@@ -753,7 +809,7 @@ async function seed() {
         price: "11.70",
         descBg: "Японски боул с панирано свинско месо, ориз и зеленчуци",
         descEn: "Japanese bowl with breaded pork, rice and vegetables",
-        tags: [t.gluten, t.eggs, t.soy],
+        tags: [t.gluten, t.eggs, t.soy, t.nuts, t.sulfites], // PDF: 1,3,6,8,12
       },
       {
         slug: "shogoyak",
@@ -762,7 +818,7 @@ async function seed() {
         price: "11.70",
         descBg: "Японски боул с пилешко в соев сос, ориз и зеленчуци",
         descEn: "Japanese bowl with chicken in soy sauce, rice and vegetables",
-        tags: [t.soy, t.gluten],
+        tags: [t.soy, t.nuts, t.sulfites], // PDF: 6,8,12
       },
       {
         slug: "karage_pileshk",
@@ -771,7 +827,7 @@ async function seed() {
         price: "10.70",
         descBg: "Японски боул с панирано пилешко, ориз и зеленчуци",
         descEn: "Japanese bowl with fried chicken, rice and vegetables",
-        tags: [t.gluten, t.eggs, t.soy],
+        tags: [t.gluten, t.eggs, t.soy, t.nuts, t.sulfites], // PDF: 1,3,6,8,12
       },
     ];
     allCreatedItems.push(
@@ -787,7 +843,7 @@ async function seed() {
         price: "3.70",
         descBg: "Традиционна мисо супа с тофу, водорасли и зелен лук",
         descEn: "Traditional miso soup with tofu, seaweed and spring onions",
-        tags: [t.vegetarian, t.vegan, t.soy],
+        tags: [t.vegetarian, t.fish, t.soy], // PDF: 4, 6 (miso contains fish stock)
       },
       {
         slug: "miso_svinsk",
@@ -796,7 +852,7 @@ async function seed() {
         price: "4.70",
         descBg: "Мисо супа със свинско месо, тофу и водорасли",
         descEn: "Miso soup with pork, tofu and seaweed",
-        tags: [t.soy],
+        tags: [t.fish, t.soy], // PDF: 4, 6
       },
       {
         slug: "miso_vega",
@@ -805,7 +861,7 @@ async function seed() {
         price: "3.70",
         descBg: "Веган мисо супа с водорасли и зелен лук",
         descEn: "Vegan miso soup with seaweed and spring onions",
-        tags: [t.vegetarian, t.vegan, t.soy],
+        tags: [t.vegetarian, t.vegan, t.soy], // PDF: 6
       },
     ];
     allCreatedItems.push(
@@ -860,7 +916,7 @@ async function seed() {
           "Хавайски поке боул с риба тон, ориз, авокадо, едамаме и соев сос",
         descEn:
           "Hawaiian poke bowl with tuna, rice, avocado, edamame and soy sauce",
-        tags: [t.popular, t.fish, t.soy, t.sesame],
+        tags: [t.popular, t.fish, t.soy, t.nuts, t.sesame], // PDF: 4,6,8,11
       },
       {
         slug: "poke_syomg",
@@ -871,7 +927,7 @@ async function seed() {
           "Хавайски поке боул със сьомга, ориз, авокадо, едамаме и соев сос",
         descEn:
           "Hawaiian poke bowl with salmon, rice, avocado, edamame and soy sauce",
-        tags: [t.popular, t.fish, t.soy, t.sesame],
+        tags: [t.popular, t.fish, t.soy, t.nuts, t.sesame], // PDF: 4,6,8,11
       },
       {
         slug: "poke_zelenchuts",
@@ -881,7 +937,7 @@ async function seed() {
         descBg: "Веган поке боул с тофу, ориз, авокадо, едамаме и соев сос",
         descEn:
           "Vegan poke bowl with tofu, rice, avocado, edamame and soy sauce",
-        tags: [t.vegetarian, t.vegan, t.soy, t.sesame],
+        tags: [t.vegetarian, t.vegan, t.soy, t.nuts, t.sesame], // PDF: 6,8,11
       },
     ];
     allCreatedItems.push(
