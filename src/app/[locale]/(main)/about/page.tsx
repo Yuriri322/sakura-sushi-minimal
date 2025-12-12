@@ -131,13 +131,13 @@ export default async function AboutPage({
         <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">5+</div>
+              <div className="text-4xl font-bold text-primary mb-2">2+</div>
               <div className="text-sm text-muted-foreground">
                 {t("yearsExperience")}
               </div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">10K+</div>
+              <div className="text-4xl font-bold text-primary mb-2">5K+</div>
               <div className="text-sm text-muted-foreground">
                 {t("happyCustomers")}
               </div>
@@ -149,7 +149,7 @@ export default async function AboutPage({
               </div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">4.8★</div>
+              <div className="text-4xl font-bold text-primary mb-2">4.9★</div>
               <div className="text-sm text-muted-foreground">
                 {t("averageRating")}
               </div>
