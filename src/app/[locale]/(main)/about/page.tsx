@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
+import Image from "next/image";
 
 export default async function AboutPage({
   params,
@@ -213,41 +214,44 @@ export default async function AboutPage({
         <Card className="p-8 mb-12">
           <h2 className="text-3xl font-bold mb-6">{t("meetOurTeam")}</h2>
           <p className="text-muted-foreground mb-6">{t("teamDescription")}</p>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            {/* Founder */}
             <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-12 w-12 text-primary" />
+              <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-primary/20 relative">
+                <Image
+                  src="https://vatrxjtbwwlfhidnyoof.supabase.co/storage/v1/object/public/menu-images/staff/founder.jpg"
+                  alt={t("founderName")}
+                  fill
+                  className="object-cover"
+                  sizes="192px"
+                />
               </div>
-              <h3 className="font-semibold text-lg mb-1">{t("chefTakeshi")}</h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                {t("headSushiChef")}
+              <h3 className="font-semibold text-xl mb-1">{t("founderName")}</h3>
+              <p className="text-sm text-primary font-medium mb-3">
+                {t("founderTitle")}
               </p>
               <p className="text-sm text-muted-foreground">
-                {t("chefExperience")}
+                {t("founderDescription")}
               </p>
             </div>
+
+            {/* Chef */}
             <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-12 w-12 text-primary" />
+              <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-primary/20 relative">
+                <Image
+                  src="https://vatrxjtbwwlfhidnyoof.supabase.co/storage/v1/object/public/menu-images/staff/chef.jpg"
+                  alt={t("chefName")}
+                  fill
+                  className="object-cover"
+                  sizes="192px"
+                />
               </div>
-              <h3 className="font-semibold text-lg mb-1">{t("elena")}</h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                {t("restaurantManager")}
+              <h3 className="font-semibold text-xl mb-1">{t("chefName")}</h3>
+              <p className="text-sm text-primary font-medium mb-3">
+                {t("chefTitle")}
               </p>
               <p className="text-sm text-muted-foreground">
-                {t("elenaDescription")}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 mx-auto mb-4 flex items-center justify-center">
-                <Users className="h-12 w-12 text-primary" />
-              </div>
-              <h3 className="font-semibold text-lg mb-1">{t("serviceTeam")}</h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                {t("fastFriendly")}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {t("serviceTeamDescription")}
+                {t("chefDescription")}
               </p>
             </div>
           </div>
