@@ -149,7 +149,7 @@ import { AnimatedList, AnimatedListItem } from '@/components/animations';
 **Customer Experience**:
 1. Browse menu at `/[locale]/menu`
 2. View product details at `/[locale]/menu/[id]`
-3. Click "Call to Order" → Opens phone dialer (`tel:0876795204`)
+3. Click "Call to Order" → Opens phone dialer (`tel:+359878870757`)
 4. Or click "Email Order" → Opens email client with pre-filled template
 
 **Menu Components**:
@@ -258,7 +258,7 @@ When adding translatable content:
 1. Set `DATABASE_URL` environment variable in Vercel dashboard
 2. Run `yarn db:push` to sync schema to production database
 3. Seed menu data via Supabase SQL Editor or run seed script
-4. Update phone number `0876795204` to your restaurant's number
+4. Update phone number `+359878870757` to your restaurant's number
 5. Update email `info@sakurasushi.bg` to your restaurant's email
 
 ## Important Notes
@@ -267,7 +267,7 @@ When adding translatable content:
 - **Menu images**: Use URLs (Unsplash or upload to Supabase Storage)
 - **Prices**: Stored as decimal strings, always in BGN
 - **Orders**: Customers call or email - no online ordering system
-- **Contact info**: Update phone `0876795204` and email `info@sakurasushi.bg` throughout codebase
+- **Contact info**: Update phone `+359878870757` and email `sakurasushi.bg@gmail.com` throughout codebase
 
 ## File Structure
 

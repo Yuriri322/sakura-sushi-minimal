@@ -37,7 +37,7 @@ export default async function ContactPage({
                   {t("orderByPhoneDesc")}
                 </p>
                 <a
-                  href="tel:0876795204"
+                  href="tel:+359878870757"
                   className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary hover:underline"
                 >
                   <Phone className="h-4 w-4" />
@@ -80,7 +80,7 @@ export default async function ContactPage({
                     {t("phoneDescription")}
                   </p>
                   <a
-                    href="tel:0876795204"
+                    href="tel:+359878870757"
                     className="text-lg font-medium hover:text-primary transition-colors"
                   >
                     {t("phoneNumber")}
@@ -259,7 +259,7 @@ export default async function ContactPage({
                 {t("needAssistanceDescription")}
               </p>
               <Button variant="default" size="lg" className="w-full" asChild>
-                <a href="tel:0876795204">
+                <a href="tel:+359878870757">
                   <Phone className="h-4 w-4 mr-2" />
                   {t("callNow")}
                 </a>

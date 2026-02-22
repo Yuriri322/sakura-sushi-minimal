@@ -96,13 +96,10 @@ export async function ProductDetail({ product }: ProductDetailProps) {
             <div className="flex items-end justify-between">
               <div className="flex flex-col gap-1">
                 <span className="text-3xl font-bold text-primary">
-                  {parseFloat(product.price).toFixed(2)} лв
+                  {product.priceEur
+                    ? `${parseFloat(product.priceEur).toFixed(2)} €`
+                    : `${parseFloat(product.price).toFixed(2)} лв`}
                 </span>
-                {product.priceEur && (
-                  <span className="text-xl text-muted-foreground">
-                    {parseFloat(product.priceEur).toFixed(2)} €
-                  </span>
-                )}
               </div>
               {product.pieces && (
                 <span className="text-lg text-muted-foreground">

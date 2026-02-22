@@ -19,7 +19,7 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   const t = useTranslations("menu");
 
   const handleCallToOrder = () => {
-    window.location.href = "tel:0876795204";
+    window.location.href = "tel:+359878870757";
   };
 
   const handleEmailOrder = () => {
@@ -47,18 +47,13 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
     <div className="space-y-4">
       {/* Price Display */}
       <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-baseline gap-2">
-            <span className="text-sm text-muted-foreground">{t("price")}:</span>
-            <span className="text-2xl font-bold text-primary">
-              {parseFloat(product.price).toFixed(2)} лв
-            </span>
-          </div>
-          {product.priceEur && (
-            <span className="text-lg text-muted-foreground">
-              {parseFloat(product.priceEur).toFixed(2)} €
-            </span>
-          )}
+        <div className="flex items-baseline gap-2">
+          <span className="text-sm text-muted-foreground">{t("price")}:</span>
+          <span className="text-2xl font-bold text-primary">
+            {product.priceEur
+              ? `${parseFloat(product.priceEur).toFixed(2)} €`
+              : `${parseFloat(product.price).toFixed(2)} лв`}
+          </span>
         </div>
       </div>
 
@@ -86,8 +81,8 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
 
       {/* Contact Info */}
       <div className="text-sm text-muted-foreground text-center">
-        <p>📞 087 679 5204</p>
-        <p>✉️ info@sakurasushi.bg</p>
+        <p>📞 +359 87 887 0757</p>
+        <p>✉️ sakurasushi.bg@gmail.com</p>
       </div>
     </div>
   );

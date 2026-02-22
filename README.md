@@ -155,7 +155,7 @@ yarn db:seed           # Seed database with full menu (49 items)
 ### Contact Information
 
 Update phone/email in translation files:
-- **Phone**: Search for `087 679 5204` in `locales/bg.json` and `locales/en.json`
+- **Phone**: Search for `+359 87 887 0757` in `locales/bg.json` and `locales/en.json`
 - **Email**: Search for `sakurasushi.bg@gmail.com` and replace
 - **Address**: Update in contact page translations
 
@@ -307,7 +307,7 @@ Contributions, issues, and feature requests are welcome!
 **Sakura Sushi Team**
 - Website: [sakurasushi.bg](https://sakurasushi.bg)
 - Email: sakurasushi.bg@gmail.com
-- Phone: 087 679 5204
+- Phone: +359 87 887 0757
 
 ## 🌟 Show Your Support
 

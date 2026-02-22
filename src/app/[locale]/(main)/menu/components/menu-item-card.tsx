@@ -123,13 +123,10 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
           <div className="flex items-end justify-between">
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-bold text-primary">
-                {parseFloat(item.price).toFixed(2)} лв
+                {item.priceEur
+                  ? `${parseFloat(item.priceEur).toFixed(2)} €`
+                  : `${parseFloat(item.price).toFixed(2)} лв`}
               </span>
-              {item.priceEur && (
-                <span className="text-sm text-muted-foreground">
-                  {parseFloat(item.priceEur).toFixed(2)} €
-                </span>
-              )}
             </div>
             {item.pieces && (
               <span className="text-sm text-muted-foreground">

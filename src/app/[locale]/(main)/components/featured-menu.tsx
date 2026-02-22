@@ -63,13 +63,10 @@ export function FeaturedMenu({ featuredItems }: FeaturedMenuProps) {
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
                   <span className="text-lg font-bold text-primary">
-                    {parseFloat(item.price).toFixed(2)} лв
+                    {item.priceEur
+                      ? `€${parseFloat(item.priceEur).toFixed(2)}`
+                      : `${parseFloat(item.price).toFixed(2)} лв`}
                   </span>
-                  {item.priceEur && (
-                    <span className="text-xs text-muted-foreground">
-                      €{parseFloat(item.priceEur).toFixed(2)}
-                    </span>
-                  )}
                 </div>
                 <FeaturedMenuItemActions item={item} />
               </div>

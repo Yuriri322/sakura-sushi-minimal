@@ -22,7 +22,7 @@ export function FeaturedMenuItemActions({ item }: FeaturedMenuItemProps) {
     if (!item.available) return;
 
     // Open phone dialer
-    window.location.href = "tel:0876795204";
+    window.location.href = "tel:+359878870757";
   };
 
   return (
